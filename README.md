@@ -7,3 +7,6 @@ A container image is a lightweight, stand-alone, executable package of a softwar
 * system libraries
 
 This repository contains support material for MUMC+ Docker Workshop. Slide deck is availabe [here](https://slides.com/inesmendes/containers-workshop-umcm).
+
+#### Contacts
+Inês Mendes, cimendes@medicina.ulisboa.pt
