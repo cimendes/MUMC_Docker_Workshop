@@ -2,15 +2,15 @@
 # https://docs.docker.com/engine/reference/builder/
 
 # Base image - Alternatives: Conda, Python...
-FROM ubuntu:16.04
+FROM continuumio/miniconda3
 
-# Metadata
-LABEL base.image="ubuntu"
+# Metadata - optional
+LABEL base.image="miniconda3"
 LABEL version="0.1"
-LABEL software=""
-LABEL software.version=""
-LABEL description="First example - Docker workshop"
-LABEL website=""
+LABEL software="canu"
+LABEL software.version="2.1"
+LABEL description="First example - Docker workshop Canu Assembler"
+LABEL website="https://github.com/marbl/canu"
 LABEL documentation=""
 LABEL license=""
 LABEL tags=""
@@ -19,15 +19,14 @@ LABEL tags=""
 MAINTAINER Inês Mendes <cimendes@medicina.ulisboa.pt>
 
 # System essentials
-RUN apt-get update && apt-get -y install build-essential \
-                                 git 
+RUN conda install -c conda-forge -c bioconda -c defaults canu
 
 # Set up workdir for installation 
-WORKDIR /NGStools
+WORKDIR /data
 
 # Dependencies
 
 # Instalation
 
 # Set up Path
-ENV PATH="/NGStools:$PATH"
+#ENV PATH="/NGStools:$PATH"
